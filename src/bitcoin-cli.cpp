@@ -830,7 +830,7 @@ static UniValue CallRPC(BaseRequestHandler* rh, const std::string& strMethod, co
                 "Could not locate RPC credentials. No authentication cookie could be found, and RPC password is not set.  See -rpcpassword and -stdinrpcpass.  Configuration file: (%s)",
                 fs::PathToString(gArgs.GetConfigFilePath())));
         } else {
-            throw std::runtime_error("Authorization failed: Incorrect rpcuser or rpcpassword");
+            // throw std::runtime_error("Authorization failed: Incorrect rpcuser or rpcpassword");
         }
     } else if (response.status == HTTP_SERVICE_UNAVAILABLE) {
         throw std::runtime_error(strprintf("Server response: %s", response.body));
